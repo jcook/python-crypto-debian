@@ -1,0 +1,3 @@
+#m68k-no-O3.patch
+no-usr-local.patch
+doc.patch

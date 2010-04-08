@@ -1,0 +1,32 @@
+Index: python-crypto-2.0.1+dfsg1/setup.py
+===================================================================
+--- python-crypto-2.0.1+dfsg1.orig/setup.py	2009-03-20 19:07:13.000000000 +0100
++++ python-crypto-2.0.1+dfsg1/setup.py	2009-03-20 19:07:23.000000000 +0100
+@@ -60,6 +60,16 @@
+     result = find_file(filename, std_dirs, paths)
+     return result
+ 
++
++def cc_remove_option (compiler, option):
++    """
++    Remove option from Unix-style compiler.
++    """
++    for optlist in (compiler.compiler, compiler.compiler_so):
++        if option in optlist:
++            optlist.remove(option)
++
++
+ class PCTBuildExt (build_ext):
+     def build_extensions(self):
+         self.extensions += [
+@@ -109,6 +119,10 @@
+ 
+         # Detect which modules should be compiled
+         self.detect_modules()
++        if self.compiler.compiler_type == 'unix':
++            if os.uname()[4] == 'm68k':
++                # work around ICE on m68k machines in gcc 4.0.1
++                cc_remove_option(self.compiler, "-O3")
+         build_ext.build_extensions(self)
+ 
+     def detect_modules (self):

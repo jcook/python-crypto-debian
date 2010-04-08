@@ -1,0 +1,6 @@
+pycrypto for Debian
+-------------------
+
+The debian pythonX.Y-crypto packages contain the Python cryptographic
+toolkit compiled for Python X.Y.
+

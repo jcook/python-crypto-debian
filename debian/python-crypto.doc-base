@@ -1,0 +1,12 @@
+Document: python-crypto
+Title: PyCrypto API Documentation
+Author: Dwayne C. Litzenberger
+Abstract: 
+ Python Crypto is a collection of cryptographic algorithms and
+ protocols, implemented for use from Python. This is the API documentation
+ for it.
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-crypto/toc.html
+Files: /usr/share/doc/python-crypto/*.html

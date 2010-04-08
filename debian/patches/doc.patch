@@ -1,0 +1,15 @@
+Subject: Build doc with local source directory.
+
+Index: pycrypto-2.1.0/Doc/epydoc-config
+===================================================================
+--- pycrypto-2.1.0.orig/Doc/epydoc-config	2010-02-28 14:29:27.000000000 +0800
++++ pycrypto-2.1.0/Doc/epydoc-config	2010-02-28 14:29:37.000000000 +0800
+@@ -2,7 +2,7 @@
+ # See http://epydoc.sourceforge.net/configfile.html for sample configuration.
+ 
+ [epydoc]
+-modules: Crypto
++modules: lib/Crypto
+ docformat: restructuredtext
+ output: html
+ target: Doc/apidoc/
